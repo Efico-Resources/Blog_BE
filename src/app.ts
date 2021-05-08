@@ -7,9 +7,12 @@ import { createWriteStream } from 'fs';
 import { connectDB } from './utils/connect_db';
 import { Logger } from './utils/logger';
 import { runApp } from './utils/run_app';
+import { getRequest } from './middlewares/getRequest';
 
 // Initiate the app
 const app = express();
+
+app.use(getRequest);
 
 // Set Up Daily Logging
 const accessDailyLogStream = createStream('access.log', {

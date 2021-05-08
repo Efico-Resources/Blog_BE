@@ -6,6 +6,7 @@ import chalk from 'chalk';
 import { Logger } from './logger';
 import { getEnvs } from './env_vars';
 import path from 'path';
+import { getRequest } from '../middlewares/getRequest';
 
 // Import routes
 const routes = require('../routes/api');
@@ -14,6 +15,7 @@ const routes = require('../routes/api');
 const PORT = process.env.PORT || 3000;
 
 export function startApp() {
+	
 	// Set Greeting And Start App
 	if (process.env.NODE_ENV === "production") {
 		const greeting = "Application Started At PORT " + PORT + " in " + process.env.NODE_ENV + " Mode";

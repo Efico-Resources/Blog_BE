@@ -6,11 +6,16 @@ const router = express.Router();
 const PostsController = require('../controllers/PostsController');
 const AuthController = require('../controllers/AuthController');
 
+import { Register } from '../controllers/RegisterController';
+
 // Respond to /
 router.get('/', PostsController.Home);
 
 // Respond to /login
-router.get('/login', AuthController.Login);
+router.post('/login', AuthController.Login);
+
+// Respond to /register
+router.post('/register', Register)
 
 // Make code global
 module.exports = router;
