@@ -1,10 +1,14 @@
 // Import Types
-
+import {Request, Response} from 'express'
 
 // Display Landing page
-const Home = (req: any, res: any) => {
-	res.send({
-		data: "Hey there"
+const Home = (req: Request, res: Response) => {
+	res.json({
+		message: 'Posts retrieved successfully',
+		status: 'ok',
+		data: {
+			
+		}
 	})
 };
 
