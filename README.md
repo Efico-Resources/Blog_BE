@@ -8,10 +8,6 @@ npm i
 npm run dev
 ```
 
-Then, start css compiler too
-```
-npx sass src/public/css:dist/public/css --watch
-```
 
 ## Build
 ```
