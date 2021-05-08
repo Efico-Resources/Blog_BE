@@ -1,0 +1,44 @@
+{
+  "name": "blog.eficoresources.com",
+  "version": "1.0.0",
+  "description": "Blog sub-domain of eficoresources.com",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node dist/app.js",
+    "dev": "nodemon src/app.ts",
+    "build": "npx tsc -p . && npx sass src/public/css:dist/public/css && mkdir dist/log && mkdir dist/log/dev"
+  },
+  "contributors": [
+    "Zubs <zubairidrisaweda@gmail.com>",
+    "Babatunde13",
+    "Harithmetic1"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "connect-mongo": "^4.4.1",
+    "dotenv": "^8.2.0",
+    "execa": "^5.0.0",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "listr": "^0.14.3",
+    "method-override": "^3.0.0",
+    "moment": "^2.29.1",
+    "mongoose": "^5.12.2",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-oauth2": "^1.5.0",
+    "rotating-file-stream": "^2.1.5",
+    "sass": "^1.32.8",
+    "terminal-link": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/listr": "^0.14.2",
+    "@types/morgan": "^1.9.2",
+    "@types/node": "^14.14.36",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
+  }
+}
