@@ -16,18 +16,6 @@ export async function runApp() {
 				},
 			},
 			{
-				title: 'Compiling CSS files...',
-				task: async () => {
-					const result = await execa('npx', ['sass', 'src/public/css:dist/public/css']);
-
-				    if (result.failed) {
-				        return Promise.reject( new Error( 'Unable To Compile CSS' ) );
-				    }
-
-				    return true;
-				},
-			},
-			{
 				title: 'Setting Up Routes...',
 				task: () => setRoutes(),
 			},
