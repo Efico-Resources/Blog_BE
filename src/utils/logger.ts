@@ -1,7 +1,13 @@
 // Import packages
 import chalk from 'chalk';
 
-export function Logger(text: string, color: any = 'yellow') {
+/**
+ * Displays bold colorful message on the console
+ * @param text Text to be logged
+ * @param color Yellow, Red, or Green
+ * @returns true
+ */
+export function Logger(text: string, color: string = 'yellow') {
 	const obj = {
 		yellow: chalk.yellow.bold,
 		red: chalk.red.bold,

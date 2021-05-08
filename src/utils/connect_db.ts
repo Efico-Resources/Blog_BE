@@ -3,6 +3,10 @@ import mongoose from 'mongoose';
 import { getEnvs } from './env_vars';
 import { Logger } from './logger';
 
+/**
+ * Starts the application database and connects to it
+ * @returns true
+ */
 export async function connectDB () {
 
 	Logger("Connecting To Database...");

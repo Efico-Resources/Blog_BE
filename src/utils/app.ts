@@ -4,9 +4,7 @@ import terminalLink from 'terminal-link';
 const app = express();
 import chalk from 'chalk';
 import { Logger } from './logger';
-import { getEnvs } from './env_vars';
 import path from 'path';
-import { getRequest } from '../middlewares/getRequest';
 
 // Import routes
 const routes = require('../routes/api');
@@ -14,6 +12,9 @@ const routes = require('../routes/api');
 // Set Port
 const PORT = process.env.PORT || 3000;
 
+/**
+ * Initiate application
+ */
 export function startApp() {
 	
 	// Set Greeting And Start App
@@ -25,8 +26,6 @@ export function startApp() {
 			Logger(greeting, 'green');
 		});
 	} else {
-		const link = getEnvs().HOST;
-
 		const greeting = "Application Started At PORT " + PORT + "\nApplication can be found at " + terminalLink(chalk.yellow.bold('http://localhost:' + PORT), 'http://localhost:' + PORT);
 
 		// Start app
@@ -36,7 +35,11 @@ export function startApp() {
 	};
 }
 
+/**
+ * Set up routes and 404
+ */
 export function setRoutes() {
+	
 	// Mount routes
 	app.use('/', routes);
 
@@ -48,6 +51,9 @@ export function setRoutes() {
 	});
 }
 
+/**
+ * Create Public folder in compiled code
+ */
 export function setStaticFolder() {
 	// Set static files
 	app.use(express.static(path.join(__dirname, '..', '..','dist', 'public')));

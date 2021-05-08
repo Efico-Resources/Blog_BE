@@ -4,7 +4,6 @@ import path from 'path';
 import morgan from 'morgan';
 import { createStream } from 'rotating-file-stream';
 import { createWriteStream } from 'fs';
-import { connectDB } from './utils/connect_db';
 import { Logger } from './utils/logger';
 import { runApp } from './utils/run_app';
 import { getRequest } from './middlewares/getRequest';

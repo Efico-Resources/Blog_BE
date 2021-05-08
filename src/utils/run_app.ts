@@ -2,8 +2,11 @@
 import Listr from 'listr';
 import { connectDB } from './connect_db';
 import { startApp, setRoutes, setStaticFolder } from './app';
-import execa from 'execa';
 
+/**
+ * Runs all the tasks to start application
+ * @returns true
+ */
 export async function runApp() {
 	
 	// Set Tasks
@@ -20,7 +23,7 @@ export async function runApp() {
 				task: () => setRoutes(),
 			},
 			{
-				title: 'Setting Views And Static Files...',
+				title: 'Setting Static Files...',
 				task: () => setStaticFolder(),
 			},
 			{

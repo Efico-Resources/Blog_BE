@@ -3,6 +3,11 @@ import dotenv from 'dotenv';
 import { readFileSync } from 'fs';
 import path from 'path';
 
+/**
+ * Get data from .env file
+ * @param key The .env value to be fetched
+ * @returns 
+ */
 export function getEnvs (key: string = '') {
 
 	// Import env data
