@@ -6,7 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=production node dist/app.js",
     "dev": "nodemon src/app.ts",
-    "build": "npx tsc -p . && mkdir dist/log mkdir dist/log/dev public"
+    "build": "npx tsc -p . && mkdir dist/log dist/log/dev dist/public"
   },
   "contributors": [
     "Zubs <zubairidrisaweda@gmail.com>",
