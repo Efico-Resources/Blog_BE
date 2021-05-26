@@ -5,9 +5,11 @@ const app = express();
 import chalk from 'chalk';
 import { Logger } from './logger';
 import path from 'path';
+import { json, urlencoded } from 'body-parser';
 
 // Import routes
-const routes = require('../routes/api');
+const authRoutes = require('../routes/api/authRoutes');
+const postRoutes = require('../routes/api/postRoutes');
 
 // Set Port
 const PORT = process.env.PORT || 3000;
@@ -39,13 +41,17 @@ export function startApp() {
  * Set up routes and 404
  */
 export function setRoutes() {
+
+	app.use(express.json());
+	app.use(urlencoded({ extended: true }));
 	
 	// Mount routes
-	app.use('/', routes);
+	app.use('/', authRoutes);
+	app.use('/', postRoutes);
 
 	// Handle 404
 	app.use('*', (req: any, res: any) => {
-		res.status(404).send({
+		res.status(404).json({
 			message: "404 | Not Found"
 		});
 	});
